@@ -57,7 +57,7 @@ struct OnTapOutsideGestureModifier: ViewModifier {
   #if canImport(UIKit)
     @MainActor func addEventMonitor(window: UIWindow) {
       self.eventMonitor = window.addGestureRecognizer {
-        self.onEnded(gestureLocation: $0.location(in: nil))
+        self.onEnded(gestureLocation: $0.location(in: window))
       }
     }
   #elseif canImport(AppKit)
