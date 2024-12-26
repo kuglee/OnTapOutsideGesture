@@ -6,19 +6,11 @@
       let recognizer = UITapGestureRecognizer { action($0) }
       recognizer.requiresExclusiveTouchType = false
       recognizer.cancelsTouchesInView = false
-      recognizer.delegate = self
 
       self.addGestureRecognizer(recognizer)
 
       return recognizer
     }
-  }
-
-  extension UIView: UIGestureRecognizerDelegate {
-    public func gestureRecognizer(
-      _ gestureRecognizer: UIGestureRecognizer,
-      shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer
-    ) -> Bool { true }
   }
 
   // from: https://stackoverflow.com/a/58901875/13162032
